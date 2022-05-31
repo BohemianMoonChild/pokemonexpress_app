@@ -1,10 +1,7 @@
 // Loads Express
 const express = require('express');
 
-// Exports data from pokemon.js to server.js
-module.exports = getData = () => {
-    return pokemon 
-}
+
 
 
 // Import Controller function
@@ -16,20 +13,29 @@ const pokemon = require ('./Models/pokemon')
 const app = express()
 const PORT=5000;
 
-// Root route
-app.get('/', (req, res) => {
-    res.render('index', {
-        pageTitle: "Pokemon Hunters",
-        pageHeader: "Find the Pokemons",
-    })
-})
-
-
 // Setup view engine ... ejs is the view engine
 app.set('view engine', 'ejs')
 
 // where are our views located? in the Views folder
 app.set('views', './Views')
+
+
+
+// Root route
+app.get('/', (req, res) => {
+    // res.render('index', {
+    //     pageTitle: "Pokemon Hunters",
+    //     pageHeader: "Find the Pokemons",
+    // })
+})
+
+// new route get handler
+app.get('/pokemon', (req,res) => {
+    res.render("index", {data:pokemon, 
+        pageTitle: "Pokemon Hunters",
+        pageHeader: "Find the Pokemons",}) 
+})
+
 
 
 
