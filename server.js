@@ -1,6 +1,11 @@
 // Loads Express
 const express = require('express');
 
+// Exports data from pokemon.js to server.js
+module.exports = getData = () => {
+    return pokemon 
+}
+
 
 // Import Controller function
 const pokemon = require ('./Models/pokemon')
